@@ -9,30 +9,30 @@ class FactorialBadInputTesting {
 
     @Test
     void testNullInput(){
-        Assertions.assertThrows(NumberFormatException.class,
-                () -> factorial.factorial(null)
-                );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            factorial.factorial(null);
+        });
     }
 
     @Test
     void testNegativeInput(){
-        Assertions.assertThrows(IllegalArgumentException.class,
-                () -> factorial.factorial(null)
-        );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            factorial.factorial("-3");
+        });
     }
 
     @Test
     void testFractionalInput(){
-        Assertions.assertThrows(NumberFormatException.class,
-                () -> factorial.factorial("4.3")
-        );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            factorial.factorial("2.5");
+        });
     }
 
     @Test
     void testNonDigitalInput(){
-        Assertions.assertThrows(NumberFormatException.class,
-                () -> factorial.factorial("s")
-        );
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            factorial.factorial("sardor");
+        });
     }
 
 

@@ -8,8 +8,10 @@ class FactorialRegularInputTesting {
     Factorial factorial = new Factorial();
 
     @Test
-    void factorialHappyTest(){
-        Assertions.assertEquals("1", factorial.factorial("0"));
+    void testRegularInput(){
+        Assertions.assertEquals("6227020800", factorial.factorial("13"));
+        Assertions.assertEquals("87178291200", factorial.factorial("14"));
+        Assertions.assertEquals("1307674368000", factorial.factorial("15"));
     }
 
 }
